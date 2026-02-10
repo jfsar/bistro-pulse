@@ -24,6 +24,8 @@ export type DashboardMenuItem =
   { name: string; icon?: React.ReactNode; href?: string;} 
   | {name: string; icon?: React.ReactNode; href?: string; items: DashboardMenuItem[]};
 
+
+
 const dashboardMenu: DashboardMenuItem[] = [
     {
       name: "Dashboard",
@@ -72,7 +74,12 @@ const dashboardMenu: DashboardMenuItem[] = [
   ];
 
 
-export default function DashboardMenu() {
+  type DashboardMenuProps = {
+    isSidebarCollapsed: boolean; 
+  }
+
+
+export default function DashboardMenu({ isSidebarCollapsed }: DashboardMenuProps) {
 
   const renderItem = (menu: DashboardMenuItem) => {
     if ("items" in menu) {
@@ -85,8 +92,8 @@ export default function DashboardMenu() {
               className="group text-[14px] text-brand-neutral-04 hover:bg-accent hover:text-brand-neutral-08 justify-start transition-none"
             >
               {menu.icon}
-              {menu.name}
-              <ChevronRightIcon className="transition-transform group-data-[state=open]:rotate-90" />
+              {!isSidebarCollapsed && menu.name}
+              {!isSidebarCollapsed && <ChevronRightIcon className="transition-transform group-data-[state=open]:rotate-90" />}
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent className="style-lyra:ml-4 mt-1 ml-5">
@@ -106,7 +113,7 @@ export default function DashboardMenu() {
         className="text-brand-neutral-04 hover:text-brand-neutral-08 font-medium text-[14px] items-center align-middle justify-start gap-2"
       >
         {menu.icon}
-        {menu.href && <Link href={menu.href}>{menu.name}</Link>}
+        {!isSidebarCollapsed && menu.href && <Link href={menu.href}>{menu.name}</Link>}
       </Button>
 
      </li>
