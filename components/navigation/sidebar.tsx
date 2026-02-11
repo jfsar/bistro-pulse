@@ -4,11 +4,10 @@ import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
-  SidebarProvider,
   SidebarRail,
   useSidebar
 } from "@/components/ui/sidebar";
-import DashboardMenu from "../menus/dashboar-menu";
+import DashboardMenu from "../menus/dashboard-menu";
 import Image from "next/image";
 
 export default function DashboardSidebar() {
