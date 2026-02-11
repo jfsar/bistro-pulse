@@ -26,7 +26,7 @@ const AdminLayout = ({children}: {children: React.ReactNode}) => {
                    </div>
                </div>
             </header>
-            <section className='w-full bg-neutral-50'>
+            <section className='w-full bg-neutral-50 px-6 py-4'>
                 {children}
             </section>
         </div>
