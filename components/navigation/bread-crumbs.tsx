@@ -109,7 +109,7 @@ const BreadCrumbs: React.FC = () => {
   }, [pathname, pathToMenuItem]);
 
   return (
-    <div className="border-l-12 px-2 border-brand-primary">
+    <div className="border-l-8 hidden md:block px-2 border-brand-primary">
       <Breadcrumb>
         <BreadcrumbList>
           {breadcrumbItems.map((item: BreadcrumbItem, index: number) => {

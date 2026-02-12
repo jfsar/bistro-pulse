@@ -1,10 +1,12 @@
 import OrderCountsCard from "@/components/commons/order-counts-card";
+import { DataTable } from "@/components/table/data-table";
+import { customerSampleData, orderRequestColumns } from "@/components/table/recent-order-request-column";
 
 
 const Overview = () => {
   return (
-    <div className="w-full space-y-4">
-       <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="space-y-4">
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <OrderCountsCard
             imgUrl="/images/orders/1.svg"
             title="Active Orders"
@@ -24,6 +26,14 @@ const Overview = () => {
             imgUrl="/images/orders/4.svg"
             title="Returned Orders"
             counts={970}
+          />
+       </div>
+       <div className="overflow-x-auto">
+          <DataTable 
+            data={customerSampleData} 
+            columns={orderRequestColumns}
+            hasHeading={true} 
+            hasSearchInput={true}
           />
        </div>
     </div>

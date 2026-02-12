@@ -17,7 +17,7 @@ const OrderCountsCard = ({
       <Card className="p-4 rounded-xs">
           <CardContent className="flex items-center gap-4">
              <div>
-               <Image src={imgUrl} alt={`${title} image`} width={75} height={75} />
+               <Image className="rounded-full" src={imgUrl} alt={`${title} image`} width={75} height={75} />
              </div>
              <div>
                 <p className="text-[16px] text-brand-neutral-04 leading-5 font-normal">{title}</p>
