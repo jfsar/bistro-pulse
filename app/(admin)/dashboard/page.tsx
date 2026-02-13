@@ -1,3 +1,4 @@
+import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
 import { DataTable } from "@/components/table/data-table";
 import { customerSampleData, orderRequestColumns } from "@/components/table/recent-order-request-column";
@@ -35,6 +36,14 @@ const Overview = () => {
             hasHeading={true} 
             hasSearchInput={true}
           />
+       </div>
+       <div className="flex flex-col md:flex-row">
+         <div className="w-full md:w-[60%]">
+          <TotalRevenueChart />
+         </div>
+         <div className="w-full md:w-[40%]">
+           
+         </div>
        </div>
     </div>
   )

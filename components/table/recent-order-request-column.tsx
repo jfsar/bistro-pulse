@@ -243,6 +243,7 @@ export const orderRequestColumns: ColumnDef<OrderRequest>[] = [
               alt={row.original.customer.name}
               fill
               className="rounded-full"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
          </div>
           <p>{row.original.customer.name}</p>
