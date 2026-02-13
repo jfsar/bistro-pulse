@@ -64,7 +64,7 @@ export function TotalRevenueChart() {
   const [timeRange, setTimeRange] = React.useState("daily");
 
   return (
-    <Card className="pt-0 rounded-sm">
+    <Card className="pt-0 rounded-sm w-full">
       <CardHeader className="flex items-center gap-2 space-y-0 py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
            <CardHeading title="Total Revenue"/>
@@ -92,18 +92,18 @@ export function TotalRevenueChart() {
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="px-2 pt-0 sm:px-6 sm:pt-4">
-        <div className="flex flex-col mb-16 md:flex-row space-y-4 md:justify-between">
-            <div>
-              <OrderCountsCard 
-                title="Income"
-                cardClassName="bg-neutral-50 border-neutral-50 shadow-sm"
-                imgContainerClassName="w-9 h-9"
-                counts="$1,390,39"
-                imgUrl="/images/orders/income.png"
-              />
-            </div>
-            <div>
+      <CardContent className="px-2 pt-0 md:px-6">
+        <div className="mb-12 flex flex-wrap justify-start space-y-8 lg:space-y-0 lg:justify-between">
+             <div className="flex-1 lg:flex-none">
+                <OrderCountsCard 
+                  title="Income"
+                  cardClassName="bg-neutral-50 border-neutral-50 shadow-sm"
+                  imgContainerClassName="w-9 h-9"
+                  counts="$1,390,39"
+                  imgUrl="/images/orders/income.png"
+                />
+             </div>
+             <div className="flex-1 lg:flex-none">
               <OrderCountsCard 
                 title="Expense"
                 cardClassName="bg-neutral-50 border-neutral-50 shadow-sm"
@@ -111,7 +111,7 @@ export function TotalRevenueChart() {
                 counts="$1,390,39"
                 imgUrl="/images/orders/expense.png"
               />
-            </div>
+             </div>
         </div>
         <ChartContainer
           config={chartConfig}

@@ -1,3 +1,4 @@
+import { SaleChart } from "@/components/charts/sales-chart";
 import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
 import { DataTable } from "@/components/table/data-table";
@@ -37,12 +38,12 @@ const Overview = () => {
             hasSearchInput={true}
           />
        </div>
-       <div className="flex flex-col md:flex-row">
+       <div className="flex flex-col md:flex-row gap-2 overflow-hidden">
          <div className="w-full md:w-[60%]">
           <TotalRevenueChart />
          </div>
          <div className="w-full md:w-[40%]">
-           
+           <SaleChart />
          </div>
        </div>
     </div>
