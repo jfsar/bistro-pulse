@@ -7,6 +7,7 @@ type OrderCountsCardProps = {
     title: string;
     counts: number | string;
     cardClassName?: string;
+    cardContentClassName?: string;
     imgContainerClassName?: string;
     titleContainerClassName?: string;
     countsContainerClassName?: string;
@@ -19,6 +20,7 @@ const OrderCountsCard = ({
     title,
     counts,
     cardClassName,
+    cardContentClassName,
     imgContainerClassName,
     titleContainerClassName,
     countsContainerClassName,
@@ -26,7 +28,7 @@ const OrderCountsCard = ({
 }: OrderCountsCardProps) => {
   return (
       <Card className={cn(`p-4 rounded-xs`, cardClassName)}>
-          <CardContent className="flex items-center gap-4">
+          <CardContent className={cn("flex gap-4 flex-wrap items-center", cardContentClassName)}>
             { imgUrl && 
               <div className={cn('relative w-18.5 h-18.5', imgContainerClassName)}>
                 <Image 
