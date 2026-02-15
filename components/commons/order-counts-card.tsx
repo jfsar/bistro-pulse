@@ -45,7 +45,7 @@ const OrderCountsCard = ({
                 >
                   {title}
                 </p>
-                <h2 className={cn("text-[24px] font-bold leading-9.5", countsContainerClassName)}>{counts}</h2>
+                <p className={cn("text-[24px] font-bold leading-9.5", countsContainerClassName)}>{counts}</p>
              </div>
              {
                icon && icon
