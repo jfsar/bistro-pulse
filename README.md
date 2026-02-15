@@ -5,7 +5,7 @@
 A modern, responsive dashboard interface for restaurant management, built with cutting-edge web technologies. Bistro Pulse provides a comprehensive solution for managing customers, orders, riders, employees, and restaurant operations all in one place.
 
 ![Project Status](https://img.shields.io/badge/Status-In%20Development-yellow)
-![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ---
 
