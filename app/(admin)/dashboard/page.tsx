@@ -1,8 +1,10 @@
 import { RankedRestaurantChart } from "@/components/charts/ranked-restaurant-chart";
 import { RestaurantChart } from "@/components/charts/restaurant-chart";
+import { RewardsChart } from "@/components/charts/rewards-chart";
 import { SaleChart } from "@/components/charts/sales-chart";
 import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
+import { CUSTOMER_DATA, customerColumn } from "@/components/table/customer-column";
 import { DataTable } from "@/components/table/data-table";
 import { customerSampleData, orderRequestColumns } from "@/components/table/recent-order-request-column";
 import { REVIEW_DATA, reviewColumn } from "@/components/table/review-column";
@@ -67,6 +69,21 @@ const Overview = () => {
             tableTitle="Reviews"
             hasFilter={false}
           />
+       </div>
+        <div className="flex flex-col lg:flex-row gap-2">
+         <div className="w-full lg:w-[60%] flex-1 flex flex-col overflow-x-auto">
+          <DataTable 
+            data={CUSTOMER_DATA} 
+            columns={customerColumn}
+            hasHeading={true}
+            tableTitle="Customers"
+            hasFilter={false}
+            hasSearchInput={true}
+          />
+         </div>
+         <div className="w-full lg:w-[40%] flex-1 flex flex-col">
+            <RewardsChart />
+         </div>
        </div>
     </div>
   )

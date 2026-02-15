@@ -2,26 +2,26 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "../ui/checkbox";
-import { MoreVertical, Star } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
+import { ArrowUpDown, MoreVertical } from "lucide-react";
+import Image from "next/image";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
-interface Review {
+interface Customer {
     name: string;
-    date: string;
-    review: string;
-    rating: string;
+    img: string;
+    phone: string;
+    location: string;
 }
 
-export const REVIEW_DATA: Review[] = [
-    { name: "Beef onion pizza", date: "Feb 08, 2024", review: "I'm very much happy. Food is good.", rating: "4.8"},
-    { name: "Cheese Pizza", date: "Feb 08, 2024", review: "I'm very much happy. Food is good.", rating: "4.8"},
-    { name: "Chicken burger", date: "Feb 08, 2024", review: "I'm very much happy. Food is good.", rating: "4.8"},
-    { name: "Beef burger", date: "Feb 08, 2024", review: "I'm very much happy. Food is good.", rating: "4.8"},
+export const CUSTOMER_DATA: Customer[] = [
+    { name: "Chelsie Jhonson", img: "/profile_pic.svg", phone:"880160000770", location:"Corner Street 5th London"},
+    { name: "Chelsie Jhonson", img: "/profile_pic.svg", phone:"880160000770", location:"Corner Street 5th London"},
+    { name: "Chelsie Jhonson", img: "/profile_pic.svg", phone:"880160000770", location:"Corner Street 5th London"},
+    { name: "Chelsie Jhonson", img: "/profile_pic.svg", phone:"880160000770", location:"Corner Street 5th London"}
 ];
 
-
-export const reviewColumn: ColumnDef<Review>[] = [
+export const customerColumn: ColumnDef<Customer>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -48,25 +48,39 @@ export const reviewColumn: ColumnDef<Review>[] = [
   },
   {
     accessorKey: "name",
-    header: "Name"
-  },
-  {
-    accessorKey: "date",
-    header: "Date"
-  },
-  {
-    accessorKey: "review",
-    header: "Review"
-  },
-  {
-    accessorKey: "rating",
-    header: "Ratings",
+    header: ({column}) => {
+        return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+        )
+    },
     cell: ({ row }) => (
-        <div className="flex items-center gap-2">
-            <Star className="w-3 h-3 fill-yellow-400 stroke-yellow-600"/>
-            <p>{row.original.rating}</p>
-        </div>
+          <div className="flex items-center gap-2 text-[14px] text-brand-neutral-04 leading-6">
+             <div className="w-5 h-5 md:w-6 md:h-6 relative">
+              <Image
+                  src={row.original.img} 
+                  alt={row.original.name}
+                  fill
+                  className="rounded-full"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+             </div>
+              <p>{row.original.name}</p>
+          </div>
     ),
+  },
+  {
+    accessorKey: "phone",
+    header: "Phone"
+  },
+  {
+    accessorKey: "location",
+    header: "Location"
   },
   {
     id: "actions",
@@ -96,3 +110,6 @@ export const reviewColumn: ColumnDef<Review>[] = [
     },
   },
 ];
+
+
+

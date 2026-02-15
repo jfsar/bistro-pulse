@@ -133,9 +133,9 @@ export function DataTable<TData, TValue>({
           }
         </div>
     </div>
-    <div className="overflow-hidden border-b rounded-none bg-white text-brand-neutral-04 text-[14px] font-normal leading-6 tracking-[-1%] shadow-none">
+    <div className="overflow-hidden border-b rounded-none bg-white text-brand-neutral-04 text-xs font-normal leading-6 tracking-[-1%] shadow-none">
       <Table>
-        <TableHeader className="text-[16px] text-brand-neutral-05 font-medium leaading-[16px] tracking-[-1%]">
+        <TableHeader className="text-sm text-brand-neutral-05 font-medium leaading-[16px] tracking-[-1%]">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
