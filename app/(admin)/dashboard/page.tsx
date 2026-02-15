@@ -5,6 +5,7 @@ import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
 import { DataTable } from "@/components/table/data-table";
 import { customerSampleData, orderRequestColumns } from "@/components/table/recent-order-request-column";
+import { REVIEW_DATA, reviewColumn } from "@/components/table/review-column";
 
 
 const Overview = () => {
@@ -36,7 +37,8 @@ const Overview = () => {
           <DataTable 
             data={customerSampleData} 
             columns={orderRequestColumns}
-            hasHeading={true} 
+            hasHeading={true}
+            tableTitle="Recent Order Request"
             hasSearchInput={true}
           />
        </div>
@@ -55,6 +57,16 @@ const Overview = () => {
          <div className="w-full lg:w-[40%] flex flex-col">
             <RankedRestaurantChart />
          </div>
+       </div>
+       <div className="overflow-x-auto">
+         <DataTable 
+            data={REVIEW_DATA} 
+            columns={reviewColumn} 
+            hasSearchInput={true}
+            hasHeading={true}
+            tableTitle="Reviews"
+            hasFilter={false}
+          />
        </div>
     </div>
   )
