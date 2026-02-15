@@ -64,25 +64,28 @@ export function RankedRestaurantChart({
         </div>
         <p className="text-brand-neutral-07 font-medium text-sm">See All</p>
       </CardHeader>
-      <CardContent className="px-2 pt-0 md:px-6 flex flex-col space-y-2">
-        {RANKED_RESTAURANTS.map((item) => (
-            <OrderCountsCard 
-              key={item.id}
-              title={item.name}
-              counts={item.description}
-              cardClassName="bg-neutral-50"
-              titleContainerClassName="text-sm font-semibold text-brand-neutral-08"
-              countsContainerClassName="text-xs font-normal text-brand-neutral-04"
-              imgContainerClassName="w-14 h-14"
-              imgUrl={item.imgUrl}
-              icon={
-                <div className="ml-auto text-center">
-                    <p className="text-sm font-semibold text-brand-neutral-08">{item.orderCount}</p>
-                    <p className="text-xs font-normal text-brand-neutral-04">Orders</p>
-                </div>
-              }
-            />
-        ))}
+      <CardContent className="px-2 pt-0 md:px-6">
+        <div className="flex flex-col flex-wrap space-y-4">
+            {RANKED_RESTAURANTS.map((item) => (
+             <OrderCountsCard 
+                key={item.id}
+                title={item.name}
+                counts={item.description}
+                cardClassName="bg-neutral-50"
+                cardContentClassName="justify-between"
+                titleContainerClassName="text-sm font-semibold text-brand-neutral-08"
+                countsContainerClassName="text-xs font-normal text-brand-neutral-04"
+                imgContainerClassName="w-14 h-14"
+                imgUrl={item.imgUrl}
+                icon={
+                    <div className="text-center">
+                        <p className="text-sm font-semibold text-brand-neutral-08">{item.orderCount}</p>
+                        <p className="text-xs font-normal text-brand-neutral-04">Orders</p>
+                    </div>
+                }
+                />
+            ))}
+        </div>
       </CardContent>
     </Card>
   );

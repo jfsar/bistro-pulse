@@ -40,19 +40,19 @@ const Overview = () => {
             hasSearchInput={true}
           />
        </div>
-       <div className="flex flex-col md:flex-row gap-2 overflow-hidden">
-         <div className="w-full md:w-[60%] flex flex-col">
+       <div className="flex flex-col lg:flex-row gap-2 overflow-hidden">
+         <div className="w-full lg:w-[60%] flex flex-col">
           <TotalRevenueChart />
          </div>
-         <div className="w-full md:w-[40%] flex flex-col">
+         <div className="w-full lg:w-[40%] flex flex-col">
            <SaleChart />
          </div>
        </div>
-        <div className="flex flex-col md:flex-row gap-2">
-         <div className="w-full md:w-[60%] flex flex-col">
+        <div className="flex flex-col lg:flex-row gap-2">
+         <div className="w-full lg:w-[60%] flex flex-col">
           <RestaurantChart />
          </div>
-         <div className="w-full md:w-[40%] flex flex-col">
+         <div className="w-full lg:w-[40%] flex flex-col">
             <RankedRestaurantChart />
          </div>
        </div>

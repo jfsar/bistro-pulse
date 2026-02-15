@@ -93,7 +93,7 @@ export function TotalRevenueChart() {
         </Select>
       </CardHeader>
       <CardContent className="px-2 pt-0 md:px-6">
-        <div className="mb-12 flex flex-wrap justify-start space-y-8 lg:space-y-0 lg:justify-between">
+        <div className="mb-12 flex flex-wrap flex-col lg:flex-row justify-start space-y-8 lg:space-y-0 lg:justify-between">
              <div className="flex-1 lg:flex-none">
                 <OrderCountsCard 
                   title="Income"
