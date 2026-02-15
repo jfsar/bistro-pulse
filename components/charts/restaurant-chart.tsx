@@ -84,7 +84,7 @@ export function RestaurantChart({
   );
 
   return (
-    <Card className={`pt-0 rounded-sm w-full ${className || ""}`}>
+    <Card className={`pt-0 rounded-sm w-full flex-1 flex flex-col ${className || ""}`}>
       <CardHeader className="flex items-center gap-2 space-y-0 py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
           <CardHeading title="Restaurants" />

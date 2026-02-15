@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 
@@ -15,7 +15,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+
 import CardHeading from "../commons/card-heading";
 import OrderCountsCard from "../commons/order-counts-card";
 import BadgeWithIcon from "../commons/badge-with-icon";
@@ -28,7 +29,7 @@ export function SaleChart() {
   const [timeRange, setTimeRange] = React.useState("daily");
 
   return (
-    <Card className="pt-0 rounded-sm">
+    <Card className="pt-0 rounded-sm w-full flex-1 flex flex-col">
       <CardHeader className="flex items-center gap-2 space-y-0 py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
            <CardHeading title="Sales"/>
@@ -56,7 +57,7 @@ export function SaleChart() {
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="px-2 pt-0 sm:px-6 sm:pt-4 md:mb-18">
+      <CardContent className="px-2 pt-0 sm:px-6 sm:pt-4 flex-1 flex flex-col justify-center">
         <div className="flex flex-col flex-wrap space-y-4">
            <OrderCountsCard 
                 title="Total Sales" 

@@ -1,3 +1,4 @@
+import { RankedRestaurantChart } from "@/components/charts/ranked-restaurant-chart";
 import { RestaurantChart } from "@/components/charts/restaurant-chart";
 import { SaleChart } from "@/components/charts/sales-chart";
 import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
@@ -40,19 +41,19 @@ const Overview = () => {
           />
        </div>
        <div className="flex flex-col md:flex-row gap-2 overflow-hidden">
-         <div className="w-full md:w-[60%]">
+         <div className="w-full md:w-[60%] flex flex-col">
           <TotalRevenueChart />
          </div>
-         <div className="w-full md:w-[40%]">
+         <div className="w-full md:w-[40%] flex flex-col">
            <SaleChart />
          </div>
        </div>
         <div className="flex flex-col md:flex-row gap-2">
-         <div className="w-full md:w-[60%]">
+         <div className="w-full md:w-[60%] flex flex-col">
           <RestaurantChart />
          </div>
-         <div className="w-full md:w-[40%]">
-            
+         <div className="w-full md:w-[40%] flex flex-col">
+            <RankedRestaurantChart />
          </div>
        </div>
     </div>

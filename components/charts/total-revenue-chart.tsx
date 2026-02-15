@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import * as React from "react";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -22,7 +22,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import CardHeading from "../commons/card-heading";
 import OrderCountsCard from "../commons/order-counts-card";
 
@@ -42,7 +42,7 @@ const chartData = [
   { date: "8:00 PM", expense: 800, income: 900 },
   { date: "9:00 PM", expense: 600, income: 700 },
   { date: "10:00 PM", expense: 800, income: 1600 },
-]
+];
 
 const chartConfig = {
   visitors: {
@@ -64,7 +64,7 @@ export function TotalRevenueChart() {
   const [timeRange, setTimeRange] = React.useState("daily");
 
   return (
-    <Card className="pt-0 rounded-sm w-full">
+    <Card className="pt-0 rounded-sm w-full flex-1 flex flex-col">
       <CardHeader className="flex items-center gap-2 space-y-0 py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
            <CardHeading title="Total Revenue"/>
