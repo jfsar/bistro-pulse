@@ -1,7 +1,9 @@
 import { RankedRestaurantChart } from "@/components/charts/ranked-restaurant-chart";
 import { RestaurantChart } from "@/components/charts/restaurant-chart";
 import { RewardsChart } from "@/components/charts/rewards-chart";
+import { RidersChart } from "@/components/charts/riders-chart";
 import { SaleChart } from "@/components/charts/sales-chart";
+import { ShiftStatisticsChart } from "@/components/charts/shift-statistics-chart";
 import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
 import { CUSTOMER_DATA, customerColumn } from "@/components/table/customer-column";
@@ -71,7 +73,7 @@ const Overview = () => {
           />
        </div>
         <div className="flex flex-col lg:flex-row gap-2">
-         <div className="w-full lg:w-[60%] flex-1 flex flex-col overflow-x-auto">
+         <div className="w-full lg:w-[60%] flex flex-col overflow-x-auto">
           <DataTable 
             data={CUSTOMER_DATA} 
             columns={customerColumn}
@@ -81,9 +83,17 @@ const Overview = () => {
             hasSearchInput={true}
           />
          </div>
-         <div className="w-full lg:w-[40%] flex-1 flex flex-col">
+         <div className="w-full lg:w-[40%] flex flex-col">
             <RewardsChart />
          </div>
+       </div>
+       <div className="flex flex-col lg:flex-row gap-2">
+        <div className="w-full lg:w-[60%] flex flex-col">
+         <ShiftStatisticsChart />
+        </div>
+        <div className="w-full lg:w-[40%] flex flex-col">
+           <RidersChart />
+        </div>
        </div>
     </div>
   )
