@@ -96,7 +96,7 @@ This project is based on the following Figma design:
 ## 📸 Screenshots
 
 ### Dashboard Overview
-*Coming soon - Add screenshots of your completed dashboard*
+*Coming soon*
 
 ---
 
