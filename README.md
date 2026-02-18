@@ -7,24 +7,9 @@ A modern, responsive dashboard interface for restaurant management, built with c
 ![Project Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Status](#project-status)
-- [Screenshots](#screenshots)
-- [Roadmap](#roadmap)
 
 ---
 
-## 🎯 Overview
-
-Bistro Pulse is a comprehensive restaurant management dashboard designed to streamline operations and provide real-time insights. Built from a Figma design inspiration, this project showcases modern UI/UX principles combined with powerful functionality for restaurant and kitchen management.
-
-The dashboard offers intuitive navigation and data visualization, making it easy for restaurant owners and managers to track orders, manage inventory, monitor employee performance, and analyze business metrics.
 
 ### 🎨 Design
 
