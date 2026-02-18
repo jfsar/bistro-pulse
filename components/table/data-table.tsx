@@ -29,14 +29,19 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 import { useState } from "react";
 import { Card } from "../ui/card";
-import { Filter } from "lucide-react";
+import { DownloadIcon, Filter } from "lucide-react";
 import CardHeading from "../commons/card-heading";
 import { SearchInPut } from "../commons/search-input";
+import { DataTablePagination } from "./data-table-pagination";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -44,6 +49,8 @@ interface DataTableProps<TData, TValue> {
   showSelectedRows?: boolean;
   showPagination?: boolean;
   hasHeading?: boolean;
+  hasAddButton?: boolean;
+  hasExport?: boolean;
   hasLink?: boolean;
   hasSearchInput?: boolean;
   hasFilter?: boolean;
@@ -59,6 +66,8 @@ export function DataTable<TData, TValue>({
   hasLink = false,
   hasSearchInput = false,
   hasFilter = true,
+  hasAddButton = false,
+  hasExport = false,
   tableTitle
 }: DataTableProps<TData, TValue>) {
 
@@ -98,14 +107,15 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         /> */}
-        {hasHeading && <CardHeading title={tableTitle || "Bistro Pulse"} />}
+        {hasHeading && <CardHeading title={tableTitle || ""} />}
         <div className="ml-auto gap-2 flex justify-end">
           {hasSearchInput && <SearchInPut />}
           { hasFilter && 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">
+                <Button variant="outline" className="items-center text-brand-neutral-04">
                   <Filter className="w-6 h-6 stroke-brand-neutral-04"/>
+                  Filter
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -128,6 +138,22 @@ export function DataTable<TData, TValue>({
                       </DropdownMenuCheckboxItem>
                     )
                   })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          }
+          { hasAddButton && <Button className="bg-brand-primary rounded-sm hover:bg-brand-primary/95">Add new Customer</Button>}
+          { hasExport && 
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="items-center focus-visible:ring-0 focus-visible:border-neutral-200 text-brand-neutral-04">
+                   <DownloadIcon className="w-4 h-4" />
+                   Export
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>PDF</DropdownMenuItem>
+                <DropdownMenuItem>Excel</DropdownMenuItem>
+                <DropdownMenuItem>Word</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           }
@@ -177,36 +203,20 @@ export function DataTable<TData, TValue>({
         </TableBody>
       </Table>
     </div>
-    <div className="flex items-center justify-end space-x-2">
+    <div className="flex items-center justify-between space-x-2">
       { showSelectedRows && 
-        <div className="text-muted-foreground flex-1 text-sm">
+        <div className="text-muted-foreground text-sm">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
       }
 
       { showPagination && 
-       <>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-       </>
+        <div>
+          <DataTablePagination table={table}/>
+        </div>
       }
-    
-      </div>
+    </div>
     </Card>
   )
 }
