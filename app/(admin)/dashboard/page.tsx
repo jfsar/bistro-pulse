@@ -6,10 +6,9 @@ import { SaleChart } from "@/components/charts/sales-chart";
 import { ShiftStatisticsChart } from "@/components/charts/shift-statistics-chart";
 import { TotalRevenueChart } from "@/components/charts/total-revenue-chart";
 import OrderCountsCard from "@/components/commons/order-counts-card";
-import { CUSTOMER_DATA, customerColumn } from "@/components/table/customer-column";
-import { DataTable } from "@/components/table/data-table";
-import { customerSampleData, orderRequestColumns } from "@/components/table/recent-order-request-column";
-import { REVIEW_DATA, reviewColumn } from "@/components/table/review-column";
+import DashboarCustomerTableWrapper from "@/components/wrapper/dashboar-customer-table-wrapper";
+import RecentOrderRequestTableWrapper from "@/components/wrapper/recent-order-request-table-wrapper";
+import ReviewsTableWrapper from "@/components/wrapper/reviews-table-wrapper";
 
 
 const Overview = () => {
@@ -38,13 +37,7 @@ const Overview = () => {
           />
        </div>
        <div className="overflow-x-auto">
-          <DataTable 
-            data={customerSampleData} 
-            columns={orderRequestColumns}
-            hasHeading={true}
-            tableTitle="Recent Order Request"
-            hasSearchInput={true}
-          />
+          <RecentOrderRequestTableWrapper />
        </div>
        <div className="flex flex-col lg:flex-row gap-2 overflow-hidden">
          <div className="w-full lg:w-[60%] flex flex-col">
@@ -63,25 +56,11 @@ const Overview = () => {
          </div>
        </div>
        <div className="overflow-x-auto">
-         <DataTable 
-            data={REVIEW_DATA} 
-            columns={reviewColumn} 
-            hasSearchInput={true}
-            hasHeading={true}
-            tableTitle="Reviews"
-            hasFilter={false}
-          />
+         <ReviewsTableWrapper />
        </div>
         <div className="flex flex-col lg:flex-row gap-2">
          <div className="w-full lg:w-[60%] flex flex-col overflow-x-auto">
-          <DataTable 
-            data={CUSTOMER_DATA} 
-            columns={customerColumn}
-            hasHeading={true}
-            tableTitle="Customers"
-            hasFilter={false}
-            hasSearchInput={true}
-          />
+          <DashboarCustomerTableWrapper />
          </div>
          <div className="w-full lg:w-[40%] flex flex-col">
             <RewardsChart />
